@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+    traefik:
+        image: traefik:alpine
+        restart: always
+        ports:
+            - "80:80"
+            - "443:443"
+            - "8080:8080"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            - ./traefik.toml:/etc/traefik/traefik.toml:ro
+            - ./.data/traefik/log/:/etc/traefik/log/
+            - ./keys:/etc/traefik/keys:ro
+
+   
+networks:
+    default:
+        external:
+            name: store

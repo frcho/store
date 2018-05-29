@@ -1,0 +1,6 @@
+[submodule "catalog"]
+	path = catalog
+	url = https://github.com/frcho/catalog.git
+[submodule "checkouts"]
+	path = checkouts
+	url = https://github.com/frcho/checkouts.git
